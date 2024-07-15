@@ -1,0 +1,42 @@
+.comparison-container{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    /* justify-content: space-between; */
+}
+.comparison-matchhistory{
+    margin-top: 25px;
+}
+.comparison-matchhistory>*{
+    margin: auto;
+    margin-bottom: 10px;
+}
+.comparison-winrate{
+    position: absolute;
+    top: 30%;
+    left:45%;
+    width: 10%;
+    color: white;
+    font-size: .9rem;
+}
+
+.comparison-winrate-box{
+    width: 100%;
+    text-align: center;
+    height: 60px;
+    padding-block:5px;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sd{
+    margin-top: 120px;
+}
+.flexQ{
+    margin-top: 80px;
+}

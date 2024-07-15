@@ -1,0 +1,242 @@
+@import url("https://api.fontshare.com/v2/css?f[]=chillax@500&display=swap");
+
+.home {
+  position: absolute;
+  z-index: -2;
+  /* background-color: #2D2831; */
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.welcome-area-container{
+  position: relative;
+  z-index: -2;
+  width:100%;
+  height:100vh;
+  background-color: #433E47;
+  padding-top: 10%;
+  overflow: hidden;
+  background-image: url('/src/assets/hex-bg.png');
+  background-size: cover;
+  background-repeat: none;
+  background-position: 0%;  
+}
+
+.welcome-area{
+  position: relative;
+  /* background-color: rgba(64, 55, 71, .5); */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+
+  /* opacity: .2; */
+  margin-left: 55%;
+  padding-left: 2%;
+  border-radius: 15px;
+  width: 100%;
+  height: 45%;
+  padding-top: 2%;
+}
+.welcome-area::after,
+.welcome-area::before{
+  content: "";
+  position: absolute;
+  inset:-.25rem;
+  z-index: -1;
+  border-radius: inherit;
+  background-color: #764b97;
+  opacity: .2;
+}
+.welcome-area::after{
+  filter: blur(2rem);
+}
+
+.welcome-header{
+  position: relative;
+  margin-left: 1%;
+  width:100%;
+  color:white;
+  font-family: 'Chillax', sans-serif;
+  font-size: 2rem;
+}
+
+.welcome-message-container{
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  width: 20%;
+  height: 65%;
+  top:15%;
+  right:0;
+  padding-left: 40px;
+}
+
+.welcome-message{
+  position: relative;
+  /* border:1px solid red; */
+  font-family: 'Chillax', sans-serif;
+  text-align: center;
+  width: 350px;
+  color:white;
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.welcome-message>img{
+  margin-top: 25px;
+  margin-left: 25px;
+  width:75px;
+}
+
+.welcome-message-description{
+  margin-top: 10px;
+  line-height: 1.5;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.search-bar-container {
+  position: relative;
+  margin-top: 2%;
+  width: 35%;
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+  z-index: 1;
+}
+
+.search-bar-container-result{
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+}
+
+.compare-result{
+  position: absolute;
+  top:5%;
+  left: 33%;
+  width: 30%;
+  z-index: 4;
+}
+.frequent-players{
+  position: absolute;
+  margin-top: 50px;
+  width:26.5%;
+  background-color: rgba(64, 55, 71,.5);
+  text-decoration: none;
+  margin-left: 1%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.frequent-players-header{
+  display: flex;
+  flex-direction: row;
+  color: #bdbdd3;
+  height:50px;
+  background-color: rgba(0,0,0,.2);
+
+  border-block : 1px solid black;
+}
+.frequent-players-header>*{
+  margin-block: auto;
+  padding-left: 10px;
+  font-size: .95rem;
+}
+.frequent-players-header-name{
+  width: 233px;
+}
+.frequent-players-header-games{
+  text-align: center;
+  width: 50px;
+}
+.frequent-players-header-wl{
+  text-align: center;
+  width: 50px;
+}
+.frequent-players-header-wr{
+  text-align: center;
+  width: 50px;
+}
+Link{
+  text-decoration: none;
+}
+
+.comparison-container{
+  position: relative;
+  width:80%;
+  margin:auto;
+  height: 80vh;
+  /* border:1px solid blue; */
+}
+
+.result-search{
+  /* color: white; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  width:80%;
+  margin-left: 5%;
+  margin-top: 5px;
+  /* border: 1px solid green; */
+}
+.result-search-text{
+  font-family: 'Chillax', sans-serif;
+  font-size: 1.35rem;
+  color: rgb(167, 167, 167);
+}
+.result-search-bar{
+  width:40%;
+}
+.back-btn{
+  position: absolute;
+  top:2.5%;
+  left: 2%;
+  width: 10%;
+  height: 5%;
+  padding-top: .5%;
+  text-align: center;
+  border: 1px solid #764b97;
+  color: #764b97;
+  text-decoration: none;
+}
+/* .match-history{
+  border:1px solid red;
+} */
+.match-type-selector{
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 40px;
+  margin-left: 30%;
+  background-color: rgba(64, 55, 71,.5);
+  padding-block: 4px;
+  padding-left: 25%;
+  gap:10px;
+  color: #bdbdd3;
+}
+
+.match-type-option{
+  /* border: 1px solid orange; */
+  cursor: pointer;
+  width: 25%;
+  text-align: center;
+  padding-top: 5px;
+  border-radius: 10px;
+  /* border-right: 1px solid #764b97; */
+}
+.match-type-option:not(.selected):hover{
+  border: 1px solid gray;
+}
+.match-type-option.selected{
+  background-color: rgba(0, 0, 0, .2);
+}

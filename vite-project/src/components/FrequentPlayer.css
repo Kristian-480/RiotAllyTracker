@@ -1,0 +1,66 @@
+.freq-player{
+    display: flex;
+    flex-direction: row;
+    height:50px;
+    overflow: hidden;
+    border-bottom:1px solid black;
+    padding-left: 10px;
+    color: #bdbdd3;
+}
+.freq-player:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+.freq-player:hover>.freq-player-name{
+    text-decoration: underline;
+}
+.frequent-players-title{
+    display: flex;
+    flex-direction: row;
+    color: #bdbdd3;
+    height:30px;
+    margin-block: auto;
+    padding-left: 10px;
+
+}
+.freq-player>*{
+    margin-block: auto;
+    font-size: .9rem;
+}
+
+.freq-player-thumb{
+    width:25px;
+    height: 25px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.freq-player-name{
+    width: 200px;
+    font-size: .9rem;
+    margin-left: 8px;
+}
+
+.freq-player-thumb>img{
+    width:100%;
+}
+
+.freq-player-games{
+    right:10px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    color : #bdbdd3;
+}
+.freq-player-wl{
+    width: 50px;
+    text-align: center;
+}
+
+.freq-player-wr{
+    width: 50px;
+    text-align: center;
+}
+
+Link{
+    text-decoration: none;
+}

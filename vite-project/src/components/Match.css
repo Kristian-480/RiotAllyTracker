@@ -1,0 +1,184 @@
+.match-container{
+    /* border: 1px solid white; */
+    margin: auto;
+    width: 60%;
+    height: auto;
+    /* height:84px; */
+    margin-block:10px;
+    margin-left: 30%;
+    /* overflow: hidden; */
+}
+
+.user-match{
+    position: relative;
+    display: flex;
+    padding-block: 8px;
+    flex-direction: row;
+    width:100%;
+    margin: auto;
+    /* margin-block:10px; */
+    /* margin-left: 25%; */
+    height:100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    transition: all 1s ease;
+}
+
+.victory{
+    color: rgb(79, 79, 248);
+    border-left:10px solid rgb(79, 79, 248);
+    background-color: rgba(68, 68, 151, 0.5);
+}
+
+.defeat{
+    color:rgb(255, 91, 91);
+    border-left:10px solid rgb(255, 91, 91);
+    background-color: rgba(126, 51, 51, 0.5);
+}
+
+.expanded-info{
+    height:550px;
+    margin-top: 5px;
+}
+.expanded-info-header-wrapper{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    height: 50px;
+    align-items: center;
+    background-color: rgba(64, 55, 71,.5);
+    color: #bdbdd3;
+}
+
+.match-results{
+    /* border:1px solid green; */
+    width:125px;
+}
+.match-type{
+    font-size: 1rem;
+    margin-left: 5px;
+    /* margin-top: 10px; */
+    font-weight: 600;
+}
+
+.match-result{
+    position: absolute;
+    top:55px;
+    margin-left: 5px;
+    /* color: white; */
+}
+
+.match-time{
+    position: absolute;
+    top:75px;
+    margin-left: 5px;
+    color: #bdbdd3;
+    font-size: small;
+}
+
+.player-frame{
+    height:100px;
+    /* border:1px solid green; */
+    width:200px;
+}
+.img-kda-wrapper{
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+    color: #bdbdd3;
+}
+.user-champ-thumb{
+    width:50px;
+    height: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.user-champ-thumb>img{
+    width:50px;
+}
+.summoner-spells{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2px;
+    margin-top: 5px;
+    gap: 2px;
+}
+.summoner-spells>img{
+    border-radius: 2px;
+    overflow: hidden;
+    width:18px;
+}
+
+.item-list{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:2px;
+    height:25px;
+    width:200px;
+    overflow: hidden;
+}
+
+.item{
+    position: relative;
+    height: 100%;
+    width:25px;
+    border:1px solid black;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.item>img{
+    width: 100%;
+}
+
+.player-list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 150px;
+    color: #bdbdd3;
+}
+
+.player-list-info{
+    width:150px;
+}
+.player-list-info>p{
+    font-size: .75rem;
+}
+
+.player-list-info:hover >p{
+    text-decoration: underline;
+}
+
+
+
+.player-list-info>p>img{
+    width:13px;
+    margin-inline:2px;
+}
+
+.dropdown-btn{
+    position: absolute;
+    cursor: pointer;
+    background-color: rgba(255,255,255,.04);
+    right: 0;
+    width:40px;
+    top: 0;
+    height: 100%;
+}
+
+.dropdown-btn>svg{
+    position: absolute;
+    top:65%;
+    left: 19%;
+}
+
+.expanded-list-btn{
+    position: absolute;
+    top:65%;
+    left: 19%;
+    transform: rotate(180deg);
+}
+

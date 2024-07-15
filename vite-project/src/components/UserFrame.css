@@ -1,0 +1,117 @@
+.user-frame-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    width:90%;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    background-color:	#403747;
+}
+.user-frame-container::after{
+    position: absolute;
+    content: '';
+    left: 45%;
+    background: linear-gradient(to left, rgba(64, 55, 71,0) 0%,rgba(64, 55, 71,1) 75%,rgba(64, 55, 71,1) 100%);
+    /* background: linear-gradient(to left, rgba(45, 40, 49,0) 0%,rgba(45, 40, 49,1) 75%,rgba(45, 40, 49,1) 100%); */
+
+    height: 300px;
+    width:5%;
+    z-index: 1;
+}
+/* .user-frame-container::before{
+    position: absolute;
+    content: '';
+    right: 24%;
+    background: linear-gradient(to right, rgba(64, 55, 71,0) 0%,rgba(64, 55, 71,1) 75%,rgba(64, 55, 71,1) 100%);
+    height: 300px;
+    width:5%;
+    z-index: 1;
+} */
+.user-frame-bg{
+    position: absolute;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    opacity: 25%;
+}
+.kda{
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.icon-container{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-top: 65px;
+    margin-left: 50px;
+    z-index: 2;
+    /* border:1px solid blue;   */
+}
+
+.profile-icon{
+    position: relative;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    color:black;
+    z-index: 2;
+
+}
+
+.profile-icon>img{
+    width: 100px;
+    margin: auto;
+
+}
+
+.icon-container >.profile-level{
+    position: relative;
+    margin: auto;
+    width:30%;
+    padding-inline:4px;
+    background-color: white;
+    border:2px solid silver;
+    border-radius: 2px;
+    font-size: 11px;
+}
+
+.profile-name{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 65px;
+    margin-left: 10px;
+    z-index: 2;
+}
+.profile-tag{
+    margin-left: 5px;
+    color: rgb(158, 158, 177);
+}
+
+.profile-rank{
+    position: relative;
+    display: flex;
+    margin-top: 35px;
+    margin-left: 8%;
+    flex-direction: row;
+    width:320px;
+    gap: 20px;
+    height: 150px;
+    z-index: 2;
+}
+
+button{
+    width:100px;
+    height: 35px;
+}
+
+.swap-btn{
+    margin-top: 120px;
+    margin-left: -200px;
+}

@@ -1,0 +1,51 @@
+/* @import './UserRank.css'; */
+
+.compare-character{
+    position: relative;
+    width:35%;
+    height: 100%;
+    /* background: #403747; */
+    background: linear-gradient(300deg, #403747 0%, #826f91 50%, #403747 100%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    text-align: center;
+    padding-top: 20px;
+    margin-left: 7.5%;
+    color: white;
+}
+
+.compare-character:nth-child(2n){
+    position: absolute;
+    padding: none;
+    height: 100%;
+    right:7.5%;
+    width:35%;
+    /* color:red; */
+}
+
+.compare-character-thumb{
+    width:200px;
+    height: 200px;
+    border-radius: 200px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.compare-character-thumb>img{
+    width:100%;
+}
+
+.compare-character-ranks{
+    width:40%;
+    margin: auto;
+}
+
+.compare-character-ranks>*{
+    text-align: center;
+}
+
+.separator{
+    color: #bdbdd3;
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
