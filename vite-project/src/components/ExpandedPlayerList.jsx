@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, Link  } from "react-router-dom";
-
+import { filename } from '../assets/dragon-tail-ver.json'
 import { ItemList } from './ItemList'
 import './ExpandedPlayerList.css'
 
@@ -53,7 +53,7 @@ export const ExpandedPlayerList = ({gameparticipant, games, player, matchResult,
     <div className='expanded-list'  style={{backgroundColor:bgColor}}>
         <div className='expanded-list-user'>
             <div className='expanded-list-thumb'>
-                <img src={`/src/assets/dragontail-15.13.1/15.13.1/img/champion/${gameparticipant[1]}.png`} alt="profile-icon"/>
+                <img src={`${filename}/img/champion/${gameparticipant[1]}.png`} alt="profile-icon"/>
             </div>
             <div className='expanded-list-name'>
                 {gameparticipant[2] === true ? <b>{gameparticipant[0]}</b>  : 

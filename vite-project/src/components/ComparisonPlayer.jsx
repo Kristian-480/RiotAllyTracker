@@ -3,7 +3,7 @@ import './ComparisonPlayer.css'
 import axios from 'axios'
 import { Tilt } from "react-tilt";
 import { RankList } from './RankList'
-
+import { filename } from '../assets/dragon-tail-ver.json'
 
 export const ComparisonPlayer = ({results,player}) => {
     const [playername,setPlayerName] = useState("")
@@ -49,7 +49,7 @@ export const ComparisonPlayer = ({results,player}) => {
         <div className='compare-character'>
           <div className='compare-character-container'>
             <div className='compare-character-thumb'>
-                {playerinfo && <img src={`/src/assets/dragontail-15.13.1/15.13.1/img/profileicon/${playerinfo.profileIconId}.png`}/>}
+                {playerinfo && <img src={`${filename}/img/profileicon/${playerinfo.profileIconId}.png`}/>}
             </div>
             <div className='compare-character-level'>
                 {playerinfo.summonerLevel}

@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Link  } from "react-router-dom";
 import axios from 'axios'
 
+import { filename } from '../assets/dragon-tail-ver.json'
+import { filename1 } from '../assets/dragon-tail-ver.json'
 
 import "./SearchResult.css";
 import { useEffect, useState } from "react";
@@ -57,7 +59,7 @@ export const SearchResult = ({ result, rank, setRank,type,setComparePlayer }) =>
       <Link to={type} style={{ textDecoration: 'none', color: 'black' }}>
         <div className="search-result">
             <div className="result-thumb">
-              <img src={`/src/assets/dragontail-14.11.1/14.11.1/img/profileicon/${result.profileIconId}.png`} alt="profile-icon"/>
+              <img src={`${filename}/img/profileicon/${result.profileIconId}.png`} alt="profile-icon"/>
             </div>
             <div className="result-name">
               {result.gameName} #{result.tagLine}

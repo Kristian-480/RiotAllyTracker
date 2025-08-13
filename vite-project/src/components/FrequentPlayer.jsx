@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import { BrowserRouter, Routes, Route, Link  } from "react-router-dom";
 
+import { filename } from '../assets/dragon-tail-ver.json'
+
 import { useState,useEffect } from "react";
 import  './FrequentPlayer.css'
 
@@ -45,7 +47,7 @@ export const FrequentPlayer = ({frequentPlayer, setComparePlayer}) => {
     <Link to='/comparison' style={{ textDecoration: 'none' }}>
         <div className='freq-player' onClick={handleClick}>
             <div className='freq-player-thumb'>
-                {player && <img src={`/src/assets/dragontail-15.13.1/15.13.1/img/profileicon/${player.profileIconId}.png`}/>}
+                {player && <img src={`${filename}/img/profileicon/${player.profileIconId}.png`}/>}
             </div>
             <div className='freq-player-name'>
                 {player.gameName}

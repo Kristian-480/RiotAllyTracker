@@ -2,6 +2,9 @@ import React from 'react'
 import { useState,useEffect } from "react";
 import axios from 'axios'
 
+import { filename } from '../assets/dragon-tail-ver.json'
+import { filename1 } from '../assets/dragon-tail-ver.json'
+
 // import {summonerdata} from '/src/assets/dragontail-14.11.1/14.11.1/data/en_US/summoner.json'
 
 import './Match.css';
@@ -100,7 +103,7 @@ export const Match = ({games, userID, setComparePlayer}) => {
     }
 
     const getsumms = async (games,player) =>{
-        const summoners = await axios.get('/src/assets/dragontail-14.11.1/14.11.1/data/en_US/summoner.json')
+        const summoners = await axios.get('/src/assets/dragontail-15.13.1/15.13.1/data/en_US/summoner.json')
         const summoner1 = games.info.participants[player-1].summoner1Id
         const summoner2 = games.info.participants[player-1].summoner2Id
 
@@ -165,11 +168,11 @@ export const Match = ({games, userID, setComparePlayer}) => {
             <div className='player-frame'>
                 <div className='img-kda-wrapper'>
                     <div className='user-champ-thumb'>
-                        {player && <img src={`/src/assets/dragontail-15.13.1/15.13.1/img/champion/${games.info.participants[player-1].championName}.png`} alt="profile-icon"/>}
+                        {player && <img src={`${filename}/img/champion/${games.info.participants[player-1].championName}.png`} alt="profile-icon"/>}
                     </div>
                     <div className='summoner-spells'>
-                    {player && summs.length>0 &&<img src={`/src/assets/dragontail-15.13.1/15.13.1/img/spell/${summs[0][0]}.png`} alt="profile-icon"/>}
-                    {player && summs.length>0 &&<img src={`/src/assets/dragontail-15.13.1/15.13.1/img/spell/${summs[0][1]}.png`} alt="profile-icon"/>} 
+                    {player && summs.length>0 &&<img src={`${filename}/img/spell/${summs[0][0]}.png`} alt="profile-icon"/>}
+                    {player && summs.length>0 &&<img src={`${filename}/img/spell/${summs[0][1]}.png`} alt="profile-icon"/>} 
                     </div>
                     <div className='kda'>
                         {kda}
