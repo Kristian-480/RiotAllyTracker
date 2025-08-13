@@ -1,12 +1,16 @@
 from flask import Flask, redirect, url_for, jsonify,request
 from flask_cors import CORS
 import requests
+import threading
 import json
 
 app=Flask(__name__)
 cors = CORS(app, origins='*')
 
-API_KEY = "RGAPI-9777556f-a399-44a8-b952-a729dbdd947e"
+API_KEY = "RGAPI-20539996-d32b-4a8b-9c8f-619361c309d3"
+
+lock = threading.Lock()
+matchresults =[]
 
 @app.route("/users/<user>/<tag>",methods={'GET'})
 def users(user,tag):
@@ -47,10 +51,22 @@ def usersinfo():
 
 @app.route("/userRank/<user>/",methods={'GET'})
 def userRank(user):
-    response = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/{user}?api_key={API_KEY}") 
+    response = requests.get(f"https://na1.api.riotgames.com/lol/league/v4/entries/by-puuid/{user}?api_key={API_KEY}") 
     userRanks = response.json()
 
     return userRanks
+
+
+def laodmatches(match):
+
+    # matchresults=[]
+
+    # for match in response.json():
+    matchresponse = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{match}?api_key={API_KEY}")
+        # if matchresponse.json()['info']['endOfGameResult'] != "Abort_Unexpected": To be revisited as my match history broke for random abortions
+
+    with lock:
+        matchresults.append(matchresponse.json())#match metadata for site user
 
 @app.route("/history/<puuid>/<mode>/",methods={'GET'})
 def history(puuid,mode):
@@ -61,15 +77,18 @@ def history(puuid,mode):
     elif mode =="flex":
         response = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?queue=440&type=ranked&start=0&count=10&api_key={API_KEY}")
 
+    threads= []
     
-    matchresult=[]
+    for item in response.json():
+        thread = threading.Thread(target=laodmatches,args=(item,))
+        threads.append(thread)
+        thread.start()
 
-    for match in response.json():
-        matchresponse = requests.get(f"https://americas.api.riotgames.com/lol/match/v5/matches/{match}?api_key={API_KEY}")
-        # if matchresponse.json()['info']['endOfGameResult'] != "Abort_Unexpected": To be revisited as my match history broke for random abortions
-        matchresult.append(matchresponse.json())#match metadata for site user
+    for thread in threads:
+        thread.join()
 
-    return matchresult
+    return matchresults
+
 
 @app.route("/topchamp/",methods=['GET','POST'])
 def topchamp():
