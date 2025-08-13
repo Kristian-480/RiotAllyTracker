@@ -10,7 +10,7 @@
     content: '';
     background-color: rgb(45, 40, 49);
     background: radial-gradient(circle at center,rgba(45, 40, 49,1) 0%,
-    rgba(45, 40, 49,1) 30%,rgba(45, 40, 49,.6) 60%,rgba(45, 40, 49,.1) 100%);
+    rgba(45, 40, 49,.3) 30%,rgba(45, 40, 49,.3) 60%,rgba(45, 40, 49,.05) 100%);
     width: 150px;
     height: 150px;
     border-radius: 150px;
@@ -27,7 +27,7 @@
 }
 
 .rank-tier{
-   color: white;
+   color: #ececec;
    font-weight: 600;
    font-size: .85rem;
    text-align: center;
@@ -36,7 +36,7 @@
 }
 
 .rank-title{
-    color: white;
+    color: #ececec;
     font-size: .8rem;
     font-weight: 600;
     font-style:italic;
@@ -64,4 +64,22 @@
     left: -90%;
 }
 
+.wr{
+    font-size: 13px;
+    color: white;
+    text-align: center;
+    /* background-color: #40374780; */
 
+}
+.donut{
+    height: 70px;
+    margin-left: 90px;
+}
+
+.home-wr-rank{
+    color:#ececec;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5px;
+    height: 12.75px;
+}

@@ -15,8 +15,9 @@ export const SearchBar = ({ setResults, input, setInput, setfocused }) => {
 
   const fetchAPI = async () => {
     const response = await axios.get(`http://127.0.0.1:8080/users/${input.split(' ')[0]}/${input.split(' #')[1]}`);
-    if(!response.data.status)
+    if(!response.data.status){
       setResults(prevresults => [...prevresults, response.data]);
+      console.log("result set");}
     else{
         alert("User not found!")
     }

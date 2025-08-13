@@ -6,19 +6,24 @@ import { SearchResultsList } from '../components/SearchResultList'
 import { UserFrame } from "../components/UserFrame";
 import { MatchHistory } from "../components/MatchHistory";
 import { FrequentPlayerList } from "../components/FrequentPlayerList";
+import { RankList } from "../components/RankList";
 
 const ResultPage = ({ setResults, results,compareResult, setMatches, matches, setComparePlayer, 
   rank, setRank, setCompareRank, compareRank }) => {
-
   const [frequentPlayers,setFrequentPlayers] = useState([])
   const [matchSortType,setMatchSortType] = useState("all")
   const [focused,setfocused] = useState(false)
   const [input1, setInput1] = useState("");
+  const [loaded, setLoaded] = useState(0)
+  const [toLoad, setToLoad] = useState(10)
 
   const fetchMatches = async (type) =>{
     const macthHistory = await axios.get(`http://127.0.0.1:8080/history/${results[0].puuid}/${type}`);
 
     setMatches(macthHistory.data);
+    setLoaded(loaded+10)
+    console.log(loaded)
+    console.log(matches.length) 
   }
 
   const getFreqPlayers = (matches,results) => {
@@ -67,9 +72,16 @@ const ResultPage = ({ setResults, results,compareResult, setMatches, matches, se
     setMatchSortType(sortType)
   }
 
-  useEffect(() => {
+  // useEffect(() => {
+  //     fetchMatches(matchSortType);
+  // },[matchSortType]);
+
+  useEffect(() =>{
+    if(loaded<toLoad){
+      // console.log("dont load")
       fetchMatches(matchSortType);
-  },[matchSortType]);
+    }
+  },[])
 
   useEffect(() => {
     if(matches.length>0){
@@ -88,6 +100,9 @@ const ResultPage = ({ setResults, results,compareResult, setMatches, matches, se
         {compareResult && compareResult.length > 0 && <SearchResultsList results={compareResult} rank={compareRank} setRank={setCompareRank} focused={focused} setComparePlayer={setComparePlayer} type="/comparison"/>}
       </div>
       <UserFrame results={results} rank={rank}/>
+      <div className="winrates-container">
+           <RankList rank={rank} showwr={true} comp={false} loc="home"/>
+      </div>
       <div className="frequent-players">
       <div className="frequent-players-title">
         <h3>Frequent Players</h3>
@@ -103,10 +118,10 @@ const ResultPage = ({ setResults, results,compareResult, setMatches, matches, se
       </div>
       <div className="match-history">
         <div className="match-type-selector">
-          Match Type:
+          {/* <div classname="match-type-selecor-title">Match Type:</div> */}
           <div className="match-type-option all selected" onClick={()=>handleSort("all")}>All</div>
-          <div className="match-type-option solo" onClick={()=>handleSort("solo")}>Solo/Duo</div>
-          <div className="match-type-option flex" onClick={()=>handleSort("flex")}>Flex</div>
+          <div className="match-type-option solo" onClick={()=>handleSort("solo")}>Ranked Solo/Duo</div>
+          <div className="match-type-option flex" onClick={()=>handleSort("flex")}>Ranked Flex</div>
         </div>
         {matches && matches.length >0 && <MatchHistory matches={matches} userID={results[0].puuid} setComparePlayer={setComparePlayer}/>}
       </div>

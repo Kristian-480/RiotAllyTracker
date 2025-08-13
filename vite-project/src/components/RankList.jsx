@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { UserRank } from './UserRank'
 
 
-export const RankList = ({rank, showwr, comp}) => {
+export const RankList = ({rank, showwr, comp, loc}) => {
   const[formatted,setformatted] = useState(false)
   const[trimmed,settrimmed] = useState(false)
 
@@ -39,7 +39,8 @@ export const RankList = ({rank, showwr, comp}) => {
       {formatted && trimmed && <>
       {rank.map((userRank,id) => {
           return(
-            <UserRank queue={userRank.queueType} tier={userRank.tier} div={userRank.rank} showwr={showwr} rankwins={userRank.wins} ranklosses={userRank.losses} comp ={comp}key={id}/>
+            <UserRank queue={userRank.queueType} tier={userRank.tier} div={userRank.rank} showwr={showwr} 
+                      rankwins={userRank.wins} ranklosses={userRank.losses} comp ={comp}key={id} loc={loc}/>
           )
         }
       )}

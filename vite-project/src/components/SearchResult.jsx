@@ -8,9 +8,10 @@ import { useEffect, useState } from "react";
 export const SearchResult = ({ result, rank, setRank,type,setComparePlayer }) => {
 
   const fetchRank = async () => {
-    const userRank = await axios.get(`http://127.0.0.1:8080/userRank/${result.id}`);
+    const userRank = await axios.get(`http://127.0.0.1:8080/userRank/${result.puuid}`);
+    console.log(userRank.data)
     
-    const sortedranks = sortRank(userRank.data)
+    const sortedranks = sortRank(userRank.data);
     setRank(sortedranks);
   }
 

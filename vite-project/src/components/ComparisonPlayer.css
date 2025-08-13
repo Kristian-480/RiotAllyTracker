@@ -2,23 +2,23 @@
 
 .compare-character{
     position: relative;
-    width:35%;
-    height: 100%;
-    /* background: #403747; */
+    width:100%;
+    height: 90%;
     background: linear-gradient(300deg, #403747 0%, #826f91 50%, #403747 100%);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     text-align: center;
     padding-top: 20px;
-    margin-left: 7.5%;
+    /* margin-left: 12%; */
     color: white;
+    border-radius: 20px;
 }
 
 .compare-character:nth-child(2n){
     position: absolute;
     padding: none;
-    height: 100%;
-    right:7.5%;
-    width:35%;
+    height: 90%;
+    right:12%;
+    width:100%;
     /* color:red; */
 }
 

@@ -52,7 +52,7 @@ useEffect(()=>{
           <button>Swap accounts</button>
         </div>
         <div className='profile-rank'>
-          {rank && rank.length > 0 && <RankList rank={rank} showwr={false} comp={false}/>}
+          {rank && rank.length > 0 && <RankList rank={rank} showwr={false} comp={false} loc="userframe"/>}
         </div>
     </div>
   )

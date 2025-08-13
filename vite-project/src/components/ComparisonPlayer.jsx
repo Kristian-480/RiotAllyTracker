@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import './ComparisonPlayer.css'
 import axios from 'axios'
+import { Tilt } from "react-tilt";
 import { RankList } from './RankList'
 
 
@@ -10,7 +11,7 @@ export const ComparisonPlayer = ({results,player}) => {
     const [rank, setRank] = useState([]);
   
     const fetchRank = async (playerinfo) => {
-      const userRank = await axios.get(`http://127.0.0.1:8080/userRank/${playerinfo.id}`);
+      const userRank = await axios.get(`http://127.0.0.1:8080/userRank/${playerinfo.puuid}`);
       
       const sortedranks = sortRank(userRank.data)
       setRank(sortedranks);
@@ -44,10 +45,11 @@ export const ComparisonPlayer = ({results,player}) => {
     },[playerinfo])
   return (
     <>
-    <div className='compare-character'>
-        <div className='compare-character-container'>
+      <Tilt style={{width:400}}>
+        <div className='compare-character'>
+          <div className='compare-character-container'>
             <div className='compare-character-thumb'>
-                {playerinfo && <img src={`/src/assets/dragontail-14.11.1/14.11.1/img/profileicon/${playerinfo.profileIconId}.png`}/>}
+                {playerinfo && <img src={`/src/assets/dragontail-15.13.1/15.13.1/img/profileicon/${playerinfo.profileIconId}.png`}/>}
             </div>
             <div className='compare-character-level'>
                 {playerinfo.summonerLevel}
@@ -64,8 +66,9 @@ export const ComparisonPlayer = ({results,player}) => {
             <div className='compare-character-ranks'>   
                 {rank && rank.length > 0 && <RankList rank={rank} showwr={true} comp={true}/>}
             </div>}
+          </div>
         </div>
-    </div>
+      </Tilt>
     </>
   )
 }

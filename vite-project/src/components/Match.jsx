@@ -165,11 +165,11 @@ export const Match = ({games, userID, setComparePlayer}) => {
             <div className='player-frame'>
                 <div className='img-kda-wrapper'>
                     <div className='user-champ-thumb'>
-                        {player && <img src={`/src/assets/dragontail-14.11.1/14.11.1/img/champion/${games.info.participants[player-1].championName}.png`} alt="profile-icon"/>}
+                        {player && <img src={`/src/assets/dragontail-15.13.1/15.13.1/img/champion/${games.info.participants[player-1].championName}.png`} alt="profile-icon"/>}
                     </div>
                     <div className='summoner-spells'>
-                    {player && summs.length>0 &&<img src={`/src/assets/dragontail-14.11.1/14.11.1/img/spell/${summs[0][0]}.png`} alt="profile-icon"/>}
-                    {player && summs.length>0 &&<img src={`/src/assets/dragontail-14.11.1/14.11.1/img/spell/${summs[0][1]}.png`} alt="profile-icon"/>} 
+                    {player && summs.length>0 &&<img src={`/src/assets/dragontail-15.13.1/15.13.1/img/spell/${summs[0][0]}.png`} alt="profile-icon"/>}
+                    {player && summs.length>0 &&<img src={`/src/assets/dragontail-15.13.1/15.13.1/img/spell/${summs[0][1]}.png`} alt="profile-icon"/>} 
                     </div>
                     <div className='kda'>
                         {kda}

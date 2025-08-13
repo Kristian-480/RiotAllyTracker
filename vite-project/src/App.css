@@ -128,13 +128,31 @@
   width: 30%;
   z-index: 4;
 }
+
+.winrates-container{
+  position: absolute;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  width: 26.5%;
+  height: 18%;
+  /* border: 1px solid red; */
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    /* background-color: rgba(64, 55, 71,.5); */
+}
+
 .frequent-players{
   position: absolute;
-  margin-top: 50px;
+  margin-top: 200px;
+  margin-left: 5%;
   width:26.5%;
   background-color: rgba(64, 55, 71,.5);
   text-decoration: none;
-  margin-left: 1%;
+  /* border: 1px solid blue; */
+  /* margin-left: 1%; */
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .frequent-players-header{
@@ -215,14 +233,16 @@ Link{
 .match-type-selector{
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 50%;
   height: 40px;
-  margin-left: 30%;
+  margin-left: 40%;
   background-color: rgba(64, 55, 71,.5);
   padding-block: 4px;
-  padding-left: 25%;
-  gap:10px;
+  padding-inline: 5%;
+  /* padding-block: 10px; */
+  /* gap:10px; */
   color: #bdbdd3;
+  justify-content: space-around;
 }
 
 .match-type-option{

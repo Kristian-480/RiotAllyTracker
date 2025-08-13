@@ -7,7 +7,7 @@ import json
 app=Flask(__name__)
 cors = CORS(app, origins='*')
 
-API_KEY = "RGAPI-20539996-d32b-4a8b-9c8f-619361c309d3"
+API_KEY = "RGAPI-dd7b2cd8-7e64-4c8e-8520-5c1f776a9f4d"
 
 lock = threading.Lock()
 matchresults =[]
